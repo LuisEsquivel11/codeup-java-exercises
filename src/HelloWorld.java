@@ -24,5 +24,59 @@ public class HelloWorld {
         boolean whateverIWant = true;
    //   boolean somethingElse = "true"; data-type has to match variable type
         String someString = "Hello again";
+
+        int myFavoriteNumber = 11;
+
+        System.out.println(myFavoriteNumber);
+        String myString = "Luis";
+
+//        String myOtherString = 'L';
+//        System.out.println(myOtherString);
+
+//        String pi = 3.14159;
+
+//        long myNumber;
+//        System.out.println(myNumber);
+
+//        long muNumber = 3.141598;
+//        System.out.println(myNumber);
+
+//        long myNumber = 1233L;
+//        System.out.println(myNumber);
+
+//        float myNumber = (float) 3.14;
+//        System.out.println(myNumber);
+
+//        int x = 5;
+//        System.out.println(x++);
+//        System.out.println(x);
+
+//        int x = 5;
+//        System.out.println(++x);
+//        System.out.println(x);
+
+//        String theNumberThree = "three";
+//        Object o = theNumberThree;
+//        int three = (int) o;
+//        System.out.println(o);
+//        int three = (int) o;
+//        System.out.println(three);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
