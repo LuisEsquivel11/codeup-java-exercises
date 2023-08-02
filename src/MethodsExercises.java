@@ -9,7 +9,9 @@ public class MethodsExercises {
 //        division(25,5);
 //        modulus(100,3);
 //        getInteger(1,10);
-        factorial();
+//        factorial();
+//        System.out.println(generateRandomNumber());
+        rollDice();
     }
     public static int addition(int num1, int num2) {
         int sum = num1 + num2;
@@ -63,14 +65,58 @@ public class MethodsExercises {
 
      }
 
+
      public static long factorial() {
-//         System.out.println("Enter a number");
+         System.out.println("Enter a number between 1 and 10");
+        Scanner scanner = new Scanner(System.in);
+        long num = scanner.nextLong();
+
+                 for (int i = 1; i <= num; i++ ) {
+                     System.out.printf("%-1d! = %-1d \n", i, num * i);
+                 }
+                     return num;
+     }
+
+     public static int generateRandomNumber(int sides) {
+        double randomNumber = (int) (Math.random() * sides + 1);
+        return  (int) randomNumber;
+     }
+
+     public static int rollDice() {
          Scanner scanner = new Scanner(System.in);
 
-         long num = scanner.nextLong();
-         for (int i = 1; i <= num; i++ ) {
-             System.out.printf("%-1d! = %-1d \n", i, num * i);
-         }
-         return num;
+         System.out.println("Enter number of dice sides");
+
+         int sides = scanner.nextInt();
+         double dice1 = Math.round(generateRandomNumber(sides));
+         int dice1s = (int) dice1;
+         double dice2 = Math.round(generateRandomNumber(sides));
+         int dice2s = (int) dice2;
+
+         System.out.println("Roll the dice. Y/N");
+         String rollDice = scanner.next();
+
+        if (rollDice.equalsIgnoreCase("Y")){
+         System.out.println(dice1s + " " + dice2s);
+
+        } else {
+            System.out.println("Ok then.");
+            return sides;
+        }
+            System.out.println("Roll again? Y/N");
+            String rollAgain = scanner.next();
+
+            if (rollAgain.equalsIgnoreCase("Y")){
+                rollDice();
+            } else {
+                System.out.println("Thanks for playing.");
+            }
+         return sides;
      }
+
+
+
+
 }
+
+
