@@ -9,9 +9,9 @@ public class MethodsExercises {
 //        division(25,5);
 //        modulus(100,3);
 //        getInteger(1,10);
-//        factorial();
+        factorial();
 //        System.out.println(generateRandomNumber());
-        rollDice();
+//        rollDice();
     }
     public static int addition(int num1, int num2) {
         int sum = num1 + num2;
@@ -43,8 +43,8 @@ public class MethodsExercises {
      }
 
      public static int getInteger(int min, int max) {
-         System.out.println("Enter a number between " + min + " and " + max);
          Scanner scanner = new Scanner(System.in);
+         System.out.println("Enter a number between " + min + " and " + max);
          int userInput = scanner.nextInt();
 
          do {
@@ -55,7 +55,7 @@ public class MethodsExercises {
              } else {
 
                  System.out.println("Invalid input. Please enter a valid number.");
-                 scanner.next();
+                 scanner.nextInt();
              }
          } while (true);
 
@@ -70,17 +70,21 @@ public class MethodsExercises {
          System.out.println("Enter a number between 1 and 10");
         Scanner scanner = new Scanner(System.in);
         long num = scanner.nextLong();
-
+        long result = 1;
                  for (int i = 1; i <= num; i++ ) {
-                     System.out.printf("%-1d! = %-1d \n", i, num * i);
+                     result *= i;
+
+                     System.out.printf("%-1d! = %-1d \n", i, result );
                  }
                      return num;
      }
 
-     public static int generateRandomNumber(int sides) {
+
+    public static int generateRandomNumber(int sides) {
         double randomNumber = (int) (Math.random() * sides + 1);
         return  (int) randomNumber;
      }
+
 
      public static int rollDice() {
          Scanner scanner = new Scanner(System.in);

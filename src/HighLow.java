@@ -47,13 +47,13 @@ public class HighLow {
                 guessCounter += 1;
                 System.out.println("Number of guesses: " + guessCounter);
                 if (validation.equalsIgnoreCase("LOWER")) {
-                System.out.println(luckyNumb);
+//                System.out.println(luckyNumb);
                 System.out.println(validation);
 //                System.out.println("Guess again");
                 userGuess = scanner.nextInt();
                 validation = validateGuess(userGuess, luckyNumb);
                 } else if (validation.equalsIgnoreCase("HIGHER")) {
-                    System.out.println(luckyNumb);
+//                    System.out.println(luckyNumb);
                     System.out.println(validation);
 //                    System.out.println("Guess again");
                     userGuess = scanner.nextInt();
@@ -64,7 +64,8 @@ public class HighLow {
                 }
 
             } while (!validation.equalsIgnoreCase("GOOD GUESS!"));
-            System.out.println(validation);
+            System.out.println(validation + " It took you " + guessCounter + " tries.");
+            guessCounter = 0;
         return validation;
     }
 
