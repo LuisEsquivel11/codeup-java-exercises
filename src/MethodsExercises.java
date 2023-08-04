@@ -9,9 +9,9 @@ public class MethodsExercises {
 //        division(25,5);
 //        modulus(100,3);
 //        getInteger(1,10);
-        factorial();
+//        factorial();
 //        System.out.println(generateRandomNumber());
-//        rollDice();
+        rollDice();
     }
     public static int addition(int num1, int num2) {
         int sum = num1 + num2;
@@ -88,7 +88,6 @@ public class MethodsExercises {
 
      public static int rollDice() {
          Scanner scanner = new Scanner(System.in);
-
          System.out.println("Enter number of dice sides");
 
          int sides = scanner.nextInt();
