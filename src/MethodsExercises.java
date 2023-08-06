@@ -92,8 +92,9 @@ public class MethodsExercises {
 
          int sides = scanner.nextInt();
          double dice1 = Math.round(generateRandomNumber(sides));
-         int dice1s = (int) dice1;
          double dice2 = Math.round(generateRandomNumber(sides));
+
+         int dice1s = (int) dice1;
          int dice2s = (int) dice2;
 
          System.out.println("Roll the dice. Y/N");
