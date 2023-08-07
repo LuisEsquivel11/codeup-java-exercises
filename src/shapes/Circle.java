@@ -12,7 +12,7 @@ public class Circle {
         this.radius = radius;
     }
     public double getArea() {
-        return PI * radius;
+        return PI * radius * radius;
     }
     public double getCircumference() {
         return (2 * PI * radius);

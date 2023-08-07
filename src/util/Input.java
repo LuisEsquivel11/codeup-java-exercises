@@ -16,42 +16,52 @@ public class Input {
     }
 
     public boolean yesNo() {
-        return (this.scanner.nextLine().equalsIgnoreCase("yes"));
+        return this.getString().trim().toLowerCase().startsWith("y");
+
     }
 
     public int getInt(int min, int max) {
-        int userInput = this.scanner.nextInt();
-        do {
+        int userInput = this.getInt();
 
             if (userInput >= min && userInput <= max) {
-                break;
+                return userInput;
 
             } else {
 
                 System.out.println("Invalid input. Please enter a valid number.");
-
+                return this.getInt(min, max);
             }
-        } while (true);
-        return userInput;
 
     }
 
+    public int getInt() {
+        try {
+            return Integer.parseInt(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("You must enter a whole number");
+            return this.getInt();
+        }
+    }
+
+    public double getDouble() {
+        try {
+            return Double.parseDouble(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("You must enter a number");
+            return this.getDouble();
+        }
+    }
     public double getDouble(double min, double max) {
-        System.out.println("Enter a number between " + min + " and " + max);
-        double userInput = this.scanner.nextDouble();
-        do {
+        double userInput = this.getDouble();
 
-            if (userInput >= min && userInput <= max) {
-                break;
+        if (userInput >= min && userInput <= max) {
+            return userInput;
 
-            } else {
+        } else {
 
-                System.out.println("Invalid input. Please enter a valid number.");
-                scanner.nextInt();
-            }
-        } while (true);
-
-        return userInput;
+            System.out.println("Invalid input. Please enter a valid number.");
+            return this.getDouble(min, max);
+        }
     }
 
 
