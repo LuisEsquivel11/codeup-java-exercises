@@ -1,6 +1,11 @@
+import java.util.Arrays;
+
 public class ServerNameGenerator {
 
-    String[] adjectives = {
+
+    public static void main(String[] args) {
+
+        String[] adjectives = {
             "Radiant",
             "Euphoric",
             "Sensational",
@@ -13,7 +18,7 @@ public class ServerNameGenerator {
             "Charismatic"
     };
 
-    String[] nouns = {
+         String[] nouns = {
             "Adventure",
             "Galaxy",
             "Serenade",
@@ -26,8 +31,35 @@ public class ServerNameGenerator {
             "Cascade"
 
     };
+         String randomAdjective = generateName(adjectives);
+         String randomNoun = generateName(nouns);
+        System.out.printf("Generated Random name: %n%s-%n%s", randomAdjective, randomNoun);
+    }
 
-    public
+
+    public static String generateName(String[] array) {
+        int randomIndex = (int) (Math.random() * array.length);
+        String randomElement = array[randomIndex];
+        return randomElement;
+    }
+
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
