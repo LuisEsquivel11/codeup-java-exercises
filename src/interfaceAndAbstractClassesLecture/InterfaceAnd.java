@@ -1,6 +1,7 @@
 package interfaceAndAbstractClassesLecture;
 
-public abstract class InterfaceAndAbstractClasses {
+public interface InterfaceAnd{
+} class InterfaceAndAbstractClasses {
 
     public static void main(String[] args) {
 
