@@ -1,7 +1,6 @@
 package grades;
 
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class GradesApplication {
 
@@ -30,21 +29,43 @@ public class GradesApplication {
         students.put("FUImPickleRick", pickleRick);
 
         System.out.println(students.keySet());
-        String again;
-        do {
-        System.out.println("Which student would you like to learn more about?");
-        String userName = scanner.next();
+        System.out.println("Shall I display the grades of each student? Y|N");
+        String displayGrades = scanner.next();
 
-            if (students.containsKey(userName)) {
-                Object student = students.get(userName);
-                System.out.println("Name: " + ((Student) student).getName() +" Github Username: " + userName + " Grades: " + ((Student) student).getGrades());
-            } else {
-                System.out.println("No users with that username were found.");
+        if (displayGrades.equalsIgnoreCase("y")) {
+            students.forEach((key, value) -> {
+                Object student = students.get(key);
+                System.out.println(((Student) student).getName() + ": " + ((Student) student).getGrades());
+            });
+
+        }
+        System.out.println("Would you like to view the class average? Y|N");
+        String showClassAverage = scanner.next();
+
+        if (showClassAverage.equalsIgnoreCase("y")) {
+            double total = 0.0;
+            for (Student student : students.values()) {
+                 total += student.getGradeAverage();
             }
-            System.out.println("Would you like to see another student? y|n");
-             again = scanner.next();
-        } while (again.equalsIgnoreCase("y"));
+            double classAvg =  total / students.size();
+            System.out.println("The class average is: " + classAvg);
+        }
 
-    }
+            String again;
+            do {
+                System.out.println("Which student would you like to learn more about?");
+                String userName = scanner.next();
+
+                if (students.containsKey(userName)) {
+                    Object student = students.get(userName);
+                    System.out.println("Name: " + ((Student) student).getName() + " Github Username: " + userName + " Grades: " + ((Student) student).getGrades() + " Grade Average: " + ((Student) student).getGradeAverage());
+                } else {
+                    System.out.println("No users with that username were found.");
+                }
+                System.out.println("Would you like to see another student? y|n");
+                again = scanner.next();
+            } while (again.equalsIgnoreCase("y"));
+
+        }
 
 }
